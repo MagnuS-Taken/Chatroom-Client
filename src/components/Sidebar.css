@@ -1,0 +1,15 @@
+.tab-example {
+  border-right: 1px solid #eee;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.info {
+  font-size: 2vh;
+  border-top: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+
+.new-btn {
+  border-radius: 0;
+}

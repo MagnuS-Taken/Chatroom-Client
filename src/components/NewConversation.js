@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Form, Button } from "react-bootstrap";
+import { Add } from "@material-ui/icons";
 
 import { useContacts } from "../contexts/ContactsContext";
 import { useConversations } from "../contexts/ConversationsContext";
@@ -31,7 +32,10 @@ export default function NewConversation({ modalClose }) {
 
   return (
     <React.Fragment>
-      <Modal.Header closeButton>
+      <Modal.Header
+        closeButton
+        style={{ backgroundColor: "lightblue", color: "black" }}
+      >
         <Modal.Title>Create a new conversation</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -52,6 +56,7 @@ export default function NewConversation({ modalClose }) {
           })}
           <Button variant="outline-success" type="submit">
             Create
+            <Add />
           </Button>
         </Form>
       </Modal.Body>

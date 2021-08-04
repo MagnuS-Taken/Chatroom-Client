@@ -1,7 +1,10 @@
 import React, { useState, useCallback } from "react";
 import { Form, InputGroup, Button } from "react-bootstrap";
+import { Send } from "@material-ui/icons";
 
 import { useConversations } from "../contexts/ConversationsContext";
+
+import "./OpenConversation.scss";
 
 export default function OpenConversation() {
   const [text, setText] = useState("");
@@ -28,7 +31,7 @@ export default function OpenConversation() {
 
   return (
     <div className="d-flex flex-column flex-grow-1">
-      <div className="flex-grow-1 overflow-auto">
+      <div className="flex-grow-1 overflow-auto main-body" style={{}}>
         <div className="d-flex flex-column align-items-start justify-content-end px-3 ">
           {selectedConversation.messages.map((message, ind) => {
             const lastMessage =
@@ -46,24 +49,19 @@ export default function OpenConversation() {
               >
                 <div
                   className={`rounded px-2 py-1 ${
-                    message.fromMe ? "bg-primary text-white" : "border"
+                    message.fromMe
+                      ? "bg-light text-black"
+                      : "bg-success text-white"
                   }`}
                 >
                   {message.text}
-                </div>
-                <div
-                  className={`text-muted small ${
-                    message.fromMe ? "align-self-end" : ""
-                  }`}
-                >
-                  {message.fromMe ? "You" : message.senderName}
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} style={{ backgroundColor: "#2ecc40" }}>
         <Form.Group className="m-2">
           <InputGroup>
             <Form.Control
@@ -73,8 +71,12 @@ export default function OpenConversation() {
               onChange={(e) => setText(e.target.value)}
               required
             />
-            <Button type="submit" variant="outline-success">
-              Send
+            <Button
+              type="submit"
+              variant="outline-primary"
+              style={{ backgroundColor: "white" }}
+            >
+              <Send />
             </Button>
           </InputGroup>
         </Form.Group>

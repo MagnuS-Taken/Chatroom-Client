@@ -1,4 +1,5 @@
 V 1.0.0
-
 offline (localhost based) chat only
--- plan to add firebase
+
+V 1.5.0
+minor visual changes

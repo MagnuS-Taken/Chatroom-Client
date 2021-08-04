@@ -9,7 +9,11 @@ export default function Contacts() {
   return (
     <ListGroup variant="flush">
       {contacts.map((c) => {
-        return <ListGroup.Item key={c.id}>{c.name}</ListGroup.Item>;
+        return (
+          <ListGroup.Item variant="secondary" key={c.id}>
+            {c.name}
+          </ListGroup.Item>
+        );
       })}
     </ListGroup>
   );
